@@ -1,0 +1,82 @@
+{
+    "configurations": [
+        {
+            "name": "!!! WARNING !!! AUTO-GENERATED FILE, PLEASE DO NOT MODIFY IT AND USE https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags"
+        },
+        {
+            "name": "Win32",
+            "includePath": [
+                "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/include",
+                "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/src",
+                "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/APP",
+                "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/BSP",
+                "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/CMSIS",
+                "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/LIB/inc",
+                "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/LIB/src",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/CMSIS/Include",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/STM32F1xx_HAL_Driver/Inc",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/Common",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/ak4343",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/cs43l22",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/hx8347d",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/ili9320",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/ili9325",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/lis302dl",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/spfd5408",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/st7735",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/stlm75",
+                "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/stmpe811",
+                "C:/Users/Sepp/.platformio/packages/tool-unity",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/include",
+                    "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/src",
+                    "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/APP",
+                    "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/BSP",
+                    "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/CMSIS",
+                    "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/LIB/inc",
+                    "c:/Users/Sepp/Documents/GitHub/MKS-SERVO42B/firmware/MKS_SERVO/src/LIB/src",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/CMSIS/Include",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/CMSIS/Device/ST/STM32F1xx/Include",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/STM32F1xx_HAL_Driver/Inc",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/Common",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/ak4343",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/cs43l22",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/hx8347d",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/ili9320",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/ili9325",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/lis302dl",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/spfd5408",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/st7735",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/stlm75",
+                    "C:/Users/Sepp/.platformio/packages/framework-stm32cube/f1/Drivers/BSP/Components/stmpe811",
+                    "C:/Users/Sepp/.platformio/packages/tool-unity",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=50001",
+                "STM32F103xB",
+                "STM32F1",
+                "STM32F10X_HD",
+                "USE_STDPERIPH_DRIVER",
+                "MKS_SERVO42B",
+                "USE_HAL_DRIVER",
+                "F_CPU=72000000L",
+                ""
+            ],
+            "intelliSenseMode": "clang-x64",
+            "compilerPath": "C:/Users/Sepp/.platformio/packages/toolchain-gccarmnoneeabi/bin/arm-none-eabi-gcc.exe",
+            "compilerArgs": [
+                "-mthumb",
+                "-mcpu=cortex-m3",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
