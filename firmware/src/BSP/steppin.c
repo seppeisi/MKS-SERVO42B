@@ -19,7 +19,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  *
  */
- #include "steppin.h"
+#include "steppin.h"
 
 extern volatile uint32_t NVM_address;
 extern volatile int64_t numSteps;
