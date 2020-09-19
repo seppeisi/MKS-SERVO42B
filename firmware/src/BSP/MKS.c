@@ -30,7 +30,7 @@ nvm_t nvmParams = {0};
 
 int menuCalibrate(int argc, char *argv[])
 {
-	display_show("", "Calibrating...", "", "");
+	//display_show("", "Calibrating...", "", "");
 
 	StepperCtrl_calibrateEncoder();
 
@@ -43,7 +43,7 @@ int menuTestCal(int argc, char *argv[])
 	int32_t x,y;
 	char str[25];
 
-	display_show("", "Testing Cal...", "", "");
+	//display_show("", "Testing Cal...", "", "");
 
 	error = StepperCtrl_maxCalibrationError();
 
@@ -52,7 +52,7 @@ int menuTestCal(int argc, char *argv[])
 	x = x - (y * 100);
 	x = fastAbs(x);
 	sprintf(str, "%d.%02d deg",y,x);
-	display_show("Cal Error", str, "", "");
+	//display_show("Cal Error", str, "", "");
 
 	while(GPIO_ReadInputDataBit(PIN_SW, PIN_SW3_ENTER) == 1)
 	{
@@ -64,13 +64,13 @@ int menuTestCal(int argc, char *argv[])
 	}
 	return 1;
 }
-
+/*
 options_t stepOptions[] = {
 		{"200"},
 		{"400"},
 		{""},
 };
-
+*/
 //returns the index of the stepOptions when called
 // with no arguments.
 int motorSteps(int argc, char *argv[])
@@ -99,7 +99,7 @@ int motorSteps(int argc, char *argv[])
 	}
 	return 0;
 }
-
+/*
 options_t currentOptions[] = {
 		{"0"},
 		{"100"},
@@ -139,7 +139,7 @@ options_t currentOptions[] = {
 #endif
 		{""},
 };
-
+*/
 //int motorCurrent(int argc, char *argv[])
 //{
 //	if (argc == 1)
@@ -196,7 +196,7 @@ int motorHoldCurrent(int argc, char *argv[])
 		return i;
 	}
 }
-
+/*
 options_t microstepOptions[] = {
 		{"1"},
 		{"2"},
@@ -209,7 +209,7 @@ options_t microstepOptions[] = {
 		{"256"},
 		{""}
 };
-
+*/
 int microsteps(int argc, char *argv[])
 {
 	if (argc == 1)
@@ -240,14 +240,14 @@ int microsteps(int argc, char *argv[])
 		return 0;
 	}
 }
-
+/*
 options_t controlLoopOptions[] = {
 		{"Simple"},
 		{"Pos PID"},
 		{"Vel PID"},
 		{""}
 };
-
+*/
 int controlLoop(int argc, char *argv[])
 {
 	if (argc == 1)
@@ -265,13 +265,13 @@ int controlLoop(int argc, char *argv[])
 	}
 	return NVM->SystemParams.controllerMode;
 }
-
+/*
 options_t enablePinOptions[] = {
 		{"Enable"},
 		{"!Enable"},
 		{""}
 };
-
+*/
 int enablePin(int argc, char *argv[])
 {
 	if (argc == 1)
@@ -289,13 +289,13 @@ int enablePin(int argc, char *argv[])
 	}
 	return NVM->SystemParams.errorPinMode;
 }
-
+/*
 options_t dirPinOptions[] = {
 		{"High CW"},
 		{"High CCW"},
 		{""}
 };
-
+*/
 int dirPin(int argc, char *argv[])
 {
 	if (argc == 1)
@@ -313,7 +313,7 @@ int dirPin(int argc, char *argv[])
 	}
 	return NVM->SystemParams.dirPinRotation;
 }
-
+/*
 menuItem_t MenuMain[] = {	//���˵�
 		{"Calibrate", menuCalibrate, NULL},
 		{"Test Cal", menuTestCal, NULL},
@@ -330,7 +330,7 @@ menuItem_t MenuCal[] = {	//Calibrate�˵�
 		{"Calibrate", menuCalibrate, NULL},
 		{ "", NULL, NULL}
 };
-
+*/
 //check the NVM and set to defaults if there is any
 void validateAndInitNVMParams(void)
 {
@@ -366,8 +366,8 @@ void MKS_begin(void)
 
 	validateAndInitNVMParams(); //systemParams init
 
-	oled_begin();
-	display_begin(); //display init
+	//oled_begin();
+	//display_begin(); //display init
 /*
 #ifndef MKS_SERVO42B
 	display_show("MKS", "Servo57B", VERSON, ""); //��ʾ57LOGO
@@ -376,9 +376,9 @@ void MKS_begin(void)
 #endif
 */
   #ifdef MKS_SERVO42B
-  	display_show("MKS", "Servo42B", VERSON, ""); //��ʾ57LOGO
+  	//display_show("MKS", "Servo42B", VERSON, ""); //��ʾ57LOGO
   #else
-	  display_show("MKS", "Servo57B", VERSON, ""); //��ʾ42LOGO
+	  //display_show("MKS", "Servo57B", VERSON, ""); //��ʾ42LOGO
   #endif
 	delay_ms(800);
 
@@ -391,13 +391,13 @@ void MKS_begin(void)
 		//start up encoder
 		if (STEPCTRL_NO_ENCODER == stepCtrlError)
 		{
-			display_show("Encoder", " Error!", "REBOOT", "");
+			//display_show("Encoder", " Error!", "REBOOT", "");
 			while(1);	//����
 		}
 
 		if(STEPCTRL_NO_POWER == stepCtrlError)
 		{
-			display_show("Waiting", "MOTOR", "POWER", "");
+			//display_show("Waiting", "MOTOR", "POWER", "");
 			while(STEPCTRL_NO_POWER == stepCtrlError)
 			{
 				stepCtrlError = StepperCtrl_begin(); //start controller before accepting step inputs
@@ -406,18 +406,18 @@ void MKS_begin(void)
 
 		if(STEPCTRL_NO_CAL == stepCtrlError)
 		{
-			display_show("   NOT ", "Calibrated", " ", "");
+			//display_show("   NOT ", "Calibrated", " ", "");
 			delay_ms(800);
-			display_setMenu(MenuCal);
-			display_forceMenuActive();
+			//display_setMenu(MenuCal);
+			//display_forceMenuActive();
 
 			while(CalibrationTable_calValid() != true)
 			{
-				display_process();
+				//display_process();
 			}
 		}
 	}
-	display_setMenu(MenuMain);
+	//display_setMenu(MenuMain);
 
 	inputPinSetup(); //setup the step pin and dir pin
 
@@ -436,7 +436,7 @@ void MKS_loop(void)
 		StepperCtrl_enable(enableState);
 	}
 
-	display_process();
+	//display_process();
 }
 
 static void enableInput(void)

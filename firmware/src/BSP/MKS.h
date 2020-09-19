@@ -23,7 +23,6 @@
 #ifndef __MKS_H
 #define __MKS_H
 
-#include "display.h"
 #include "stepper_controller.h"
 #include "stdlib.h"
 #include "steppin.h"
