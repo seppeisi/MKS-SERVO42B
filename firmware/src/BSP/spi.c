@@ -50,7 +50,7 @@ uint16_t SPI_WriteAndRead(SPI_TypeDef* SPIx, uint16_t Data)
 }
 
 //SPI write
-bool SPI_Write(SPI_TypeDef* SPIx, uint8_t data)
+/*bool SPI_Write(SPI_TypeDef* SPIx, uint8_t data)
 {
 	uint16_t timeout = 0;
 	while((SPIx->SR & SPI_I2S_FLAG_BSY) != RESET)
@@ -86,3 +86,4 @@ bool SPI_Write(SPI_TypeDef* SPIx, uint8_t data)
 	
 	return true;
 }
+*/

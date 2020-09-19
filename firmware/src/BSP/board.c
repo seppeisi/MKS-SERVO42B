@@ -67,19 +67,19 @@ static void INPUT_init(void)
 	GPIOA->ODR |= 0x00000007;	//default STEP(PA0) DIR(PA1) ENABLE(PA2) pullup
 }
 
-//Init SPI_Marlin				    
-static void SPIMARLIN_init(void)
+//Init SPI_Slave				    
+static void SPISlave_init(void)
 { 			
 	GPIOA->CRL &= 0x0000ffff;
 	GPIOA->CRL |= 0xb3b30000;
 	GPIOA->ODR |= 0x000000f0;
 	
 	SPI_InitTypeDef SPI_InitStructure;	
-	SPI_InitStructure.SPI_Direction = SPI_Direction_1Line_Tx;
-	SPI_InitStructure.SPI_Mode = SPI_Mode_Master;
+	SPI_InitStructure.SPI_Direction = SPI_Direction_2Lines_FullDuplex;
+	SPI_InitStructure.SPI_Mode = SPI_Mode_Slave;
 	SPI_InitStructure.SPI_DataSize = SPI_DataSize_8b;
-	SPI_InitStructure.SPI_CPOL = SPI_CPOL_High;
-	SPI_InitStructure.SPI_CPHA = SPI_CPHA_2Edge;
+	SPI_InitStructure.SPI_CPOL = SPI_CPOL_Low;
+	SPI_InitStructure.SPI_CPHA = SPI_CPHA_1Edge;
 	SPI_InitStructure.SPI_NSS = SPI_NSS_Soft;
 	SPI_InitStructure.SPI_BaudRatePrescaler = SPI_BaudRatePrescaler_32;
 	SPI_InitStructure.SPI_FirstBit = SPI_FirstBit_MSB;
@@ -168,7 +168,7 @@ void board_init(void)
 	CLOCK_init();
 	NVIC_init(); 
 	INPUT_init();
-	SPIMARLIN_init();
+	SPISlave_init();
 	A4950_init();
 	A1333_init();
 	SWITCH_init();
